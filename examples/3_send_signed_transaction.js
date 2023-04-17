@@ -1,34 +1,49 @@
-const { ethers } = require("ethers");
+// const { ethers } = require("ethers");
 
-const INFURA_ID = ''
-const provider = new ethers.providers.JsonRpcProvider(`https://kovan.infura.io/v3/${INFURA_ID}`)
+// const INFURA_ID = ''
+// const provider = new ethers.providers.JsonRpcProvider(`https://kovan.infura.io/v3/${INFURA_ID}`)
 
-const account1 = '' // Your account address 1
-const account2 = '' // Your account address 2
+// const account1 = '' // Your account address 1
+// const account2 = '' // Your account address 2
 
-const privateKey1 = '' // Private key of account 1
-const wallet = new ethers.Wallet(privateKey1, provider)
+// const privateKey1 = '' // Private key of account 1
+// const wallet = new ethers.Wallet(privateKey1, provider)
 
-const main = async () => {
-    const senderBalanceBefore = await provider.getBalance(account1)
-    const recieverBalanceBefore = await provider.getBalance(account2)
+// const main = async () => {
+//     const senderBalanceBefore = await provider.getBalance(account1)
+//     const recieverBalanceBefore = await provider.getBalance(account2)
 
-    console.log(`\nSender balance before: ${ethers.utils.formatEther(senderBalanceBefore)}`)
-    console.log(`reciever balance before: ${ethers.utils.formatEther(recieverBalanceBefore)}\n`)
+//     console.log(`\nSender balance before: ${ethers.utils.formatEther(senderBalanceBefore)}`)
+//     console.log(`reciever balance before: ${ethers.utils.formatEther(recieverBalanceBefore)}\n`)
 
-    const tx = await wallet.sendTransaction({
-        to: account2,
-        value: ethers.utils.parseEther("0.025")
-    })
+//     const tx = await wallet.sendTransaction({
+//         to: account2,
+//         value: ethers.utils.parseEther("0.025")
+//     })
 
-    await tx.wait()
-    console.log(tx)
+//     await tx.wait()
+//     console.log(tx)
 
-    const senderBalanceAfter = await provider.getBalance(account1)
-    const recieverBalanceAfter = await provider.getBalance(account2)
+//     const senderBalanceAfter = await provider.getBalance(account1)
+//     const recieverBalanceAfter = await provider.getBalance(account2)
 
-    console.log(`\nSender balance after: ${ethers.utils.formatEther(senderBalanceAfter)}`)
-    console.log(`reciever balance after: ${ethers.utils.formatEther(recieverBalanceAfter)}\n`)
+//     console.log(`\nSender balance after: ${ethers.utils.formatEther(senderBalanceAfter)}`)
+//     console.log(`reciever balance after: ${ethers.utils.formatEther(recieverBalanceAfter)}\n`)
+// }
+
+// main()
+
+const {ethers} = require('ethers');
+INFURA_ID = `https://mainnet.infura.io/v3/${id}`;
+
+const provider = new ethers.providers.JsonRpcProvider(INFURA_ID);
+
+
+const BlockNumber = async () => {
+    console.log("provider",await provider.getBlockNumber());
+
 }
+BlockNumber();
+ 
 
-main()
+//   list relax shield oak bachelor unaware hero live daring seed meat expand
